@@ -17,5 +17,15 @@ RSpec.describe Ingredient do
       expect(page).to have_content('Ground Beef: 2')
       expect(page).to have_content('Salt: 4')
     end
+
+    it 'shows the ingredients alphabetically' do
+      ingredient1 = Ingredient.create!(name: 'Salt', cost: 4)
+      ingredient2 = Ingredient.create!(name: 'Ground Beef', cost: 2)
+
+      visit '/ingredients'
+
+      expect(page).to have_content('Ground Beef: 2')
+      expect(page).to have_content('Salt: 4')
+    end
   end
 end
