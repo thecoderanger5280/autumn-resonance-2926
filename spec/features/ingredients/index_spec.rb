@@ -14,7 +14,8 @@ RSpec.describe Ingredient do
 
       visit '/ingredients'
 
-      
+      expect(page).to have_content('Ground Beef: 2')
+      expect(page).to have_content('Salt: 4')
     end
   end
 end
